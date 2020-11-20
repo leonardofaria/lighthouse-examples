@@ -9,7 +9,6 @@ const chromeLauncher = require('chrome-launcher');
 
   audits['screenshot-thumbnails'].details.items
     .forEach(({ timing, data }) => {
-      debugger;
       const screenshot = data.split(';base64,').pop();
       const screenshotFile = `screenshot-${timing}ms.jpg`;
       writeFileSync(screenshotFile, screenshot, { encoding: 'base64' });
